@@ -2,4 +2,4 @@
  
 "use strict"
 
-require('../lib/cli.js')
+require('./lib/cli.js')
