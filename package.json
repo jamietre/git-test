@@ -1,13 +1,15 @@
 {
   "name": "git-test-cli",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Perform some tests on git repo status for CLI integration",
   "main": "index.js",
   "bin": {
     "git-test": "./bin.js"
   },
   "scripts": {
-    "test": "npm run test"
+    "test": "npm run test",
+    "normalize": "node build/fix-endings",
+    "prepublish": "npm run normalize"
   },
   "repository": {
     "type": "git",
@@ -20,6 +22,7 @@
   },
   "homepage": "https://github.com/jamietre/git-test#readme",
   "devDependencies": {
+    "eol": "^0.3.0",
     "eslint": "^3.7.1"
   },
   "dependencies": {
