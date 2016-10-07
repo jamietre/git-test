@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Perform some tests on git repo status for CLI integration",
   "main": "index.js",
-  "bin": "./bin/bin.js",
+  "bin": {
+    "git-test": "./bin/bin.js"
+  },
   "scripts": {
     "test": "npm run test"
   },
