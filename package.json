@@ -1,0 +1,26 @@
+{
+  "name": "git-test",
+  "version": "1.0.0",
+  "description": "Perform some tests on git repo status for CLI integration",
+  "main": "index.js",
+  "bin": "./bin/bin.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamietre/git-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamietre/git-test/issues"
+  },
+  "homepage": "https://github.com/jamietre/git-test#readme",
+  "devDependencies": {
+    "eslint": "^3.7.1"
+  },
+  "dependencies": {
+    "yargs": "^6.0.0"
+  }
+}
