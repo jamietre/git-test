@@ -1,5 +1,5 @@
 {
-  "name": "git-test",
+  "name": "git-test-cli",
   "version": "1.0.0",
   "description": "Perform some tests on git repo status for CLI integration",
   "main": "index.js",
