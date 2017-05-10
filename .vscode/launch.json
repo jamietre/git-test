@@ -1,0 +1,42 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+    {
+        "type": "node",
+        "request": "launch",
+        "name": "Mocha Tests",
+        "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
+        "args": [
+            "-u",
+            "tdd",
+            "--watch",
+            "--timeout",
+            "999999",
+            "--colors",
+            "${workspaceRoot}/test/**/*.js"
+        ],
+        "protocol": "inspector",
+        "internalConsoleOptions": "openOnSessionStart"
+    },
+    
+     {
+            "name": "Attach",
+            "type": "node",
+            "request": "attach",
+            "protocol": "inspector",
+            "port": 9229,
+            "address": "localhost",
+            "restart": false,
+            "sourceMaps": true,
+            "outFiles":  ["${workspaceRoot}/dist/**/*.js"],
+            "skipFiles": [
+                "<node_internals>/**/*.js",
+                //"${workspaceRoot}/node_modules/**/*.js",
+                //"**/node_modules/**/*.js",
+                "!${workspaceRoot}/node_modules/@costar/**/*.js"
+            ],            
+            "localRoot": null,
+            "remoteRoot": null
+        }
+    ]
+}
