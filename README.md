@@ -21,12 +21,12 @@ The intended use is as a scripting helper, e.g. to perform certain actions durin
 ```javascript
 {
    "scripts": {
-       "prepush": "git-test -b master && npm test || git-test -nb master"
+       "prepush": "git-test -b master && npm test || git-test -x -b master"
    } 
 }
 ```
 
-The negative test following the || is needed to ensure the logic following the initial test is atomic. That is, every logical test that starts with the assertion "if I'm on this branch" should end with an "or" condition of "if I'm not on this branch".
+The `-x` option inverts the result of the test, e.g. tests that the branch is not master. The  negative test following the || is needed to ensure the logic following the initial test is atomic. That is, every logical test that starts with the assertion "if I'm on this branch" should end with an "or" condition of "if I'm not on this branch".
 
 Right now it's only feature is to test which branch is active. If I need more... I will add it.
 
@@ -37,10 +37,10 @@ Right now it's only feature is to test which branch is active. If I need more...
 
 Test that the current git repo is on [branch-name]
 
-##### --not-branch [branch-name]
-##### -nb [branch-name]
+##### --except [branch-name]
+##### -x [branch-name]
 
-Test that the current git repo is **not** on [branch-name]
+Invert the result of every other test
 
 ##### --help
 

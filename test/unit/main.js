@@ -31,17 +31,26 @@ describe('main', function() {
             })    
         })
 
-        it('-nb not matches (= pass)', function() {
+        it('-x -b not matches (= pass)', function() {
             branch="foo"
-            return app(deps, { "not-branch": 'master' }).then(function(result) {
+            return app(deps, { except: true, branch: 'master' }).then(function(result) {
                 assert.ok(result, 'was not on master branch')
             })
         })
 
-        it('-nb matches (= fail)', function() { 
+        it('-n matches (= fail)', function() { 
             branch="master"
-            return app(deps, { "not-branch": 'master' }).then(function(result) {
+            return app(deps, { except: true, branch: 'master' }).then(function(result) {
                 assert.ok(!result, 'was not on master branch')
+            })
+        })
+
+        it('fails when no test is given', function() {
+            return app(deps, {}).then(function() {
+                assert.ok(false, 'should not be here')
+            })
+            .catch(function (err) {
+                assert.ok(/No test/.test(err), 'error message was as expected')
             })
         })
     })
